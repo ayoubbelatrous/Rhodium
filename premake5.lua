@@ -1,5 +1,6 @@
 workspace "Rhodium"
     architecture "x64"
+    startproject "Runtime"
 
     configurations
     {

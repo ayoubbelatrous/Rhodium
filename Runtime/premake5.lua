@@ -25,6 +25,7 @@ project "Runtime"
 
 	filter "system:windows"
 		systemversion "latest"
+		defines "RH_WINDOWS"
 
 	filter "configurations:Debug"
 		defines "RH_DEBUG"
