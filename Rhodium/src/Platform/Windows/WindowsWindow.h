@@ -10,6 +10,7 @@ namespace Rhodium::Platform
 
 		void* GetNativeWindow() const override
 		{
+			return nullptr;
 		}
 
 		void OnUpdate() override;
@@ -17,7 +18,19 @@ namespace Rhodium::Platform
 		void OnShutdown() override;
 
 	private:
+
+		struct WindowData
+		{
+			std::string Title;
+
+			uint32_t width, height;
+			bool vsync;
+		};
+
 		Core::WindowSpecification m_Specification;
 		Core::WindowProperties m_Properties;
+
+		WindowData m_Data;
+		
 	};
 }
