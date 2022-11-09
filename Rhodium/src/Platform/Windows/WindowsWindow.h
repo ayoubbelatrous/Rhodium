@@ -1,5 +1,6 @@
 #pragma once
 #include "Window/Core/Window.h"
+#include "GLFW/glfw3.h"
 
 namespace Rhodium::Platform
 {
@@ -14,7 +15,6 @@ namespace Rhodium::Platform
 		}
 
 		void OnUpdate() override;
-
 		void OnShutdown() override;
 
 	private:
@@ -31,6 +31,6 @@ namespace Rhodium::Platform
 		Core::WindowProperties m_Properties;
 
 		WindowData m_Data;
-		
+		GLFWwindow* m_GLFWWindowPtr;
 	};
 }

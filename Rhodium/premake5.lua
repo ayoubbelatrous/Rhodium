@@ -12,7 +12,8 @@ project "Rhodium"
 
     includedirs
     {
-        "src"
+        "src",
+        "%{IncludeDir.GLFW}",
     }
     
     files

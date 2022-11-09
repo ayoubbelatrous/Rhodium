@@ -2,6 +2,7 @@
 #include "Application/Core/ApplicationData.h"
 #include "Core/Base.h"
 #include "Layer/LayerStack.h"
+#include "Window/Core/Window.h"
 
 namespace Rhodium::Core
 {
@@ -15,6 +16,7 @@ namespace Rhodium::Core
 	private:
 		Data::ApplicationSpecification m_Specification;
 		Ref<Layers::LayerStack> m_LayerStack;
+		Scope<Window> m_Window;
 	};
 
 	Application* CreateApplication();

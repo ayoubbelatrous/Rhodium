@@ -13,6 +13,7 @@ namespace Rhodium::Core
 	struct WindowProperties
 	{
 		std::string WindowName = "Window";
+		uint32_t Width, Height;
 	};
 
 	struct WindowSpecification
