@@ -1,5 +1,6 @@
 #pragma once
-#include <string>
+
+#include "Events/Event.h"
 
 namespace Rhodium::Core
 {
@@ -9,7 +10,7 @@ namespace Rhodium::Core
 		EveryVBlank,
 		EverySecondVBlank
 	};
-	
+
 	struct WindowProperties
 	{
 		std::string WindowName = "Window";
@@ -25,12 +26,16 @@ namespace Rhodium::Core
 	class Window
 	{
 	public:
+		using EventCallbackFn = std::function<void(Core::Event&)>;
 		virtual ~Window() = default;
 
 		virtual void OnUpdate() = 0;
 		virtual void OnShutdown() = 0;
 
 		virtual void* GetNativeWindow() const = 0;
+
+		virtual void SetEventCallback(const EventCallbackFn& eventCallback) = 0;
+
 		static Scope<Window> Create(WindowSpecification& spec);
 
 	private:

@@ -1,7 +1,7 @@
 #include "rpch.h"
 #include "Layer/LayerStack.h"
 
-namespace Rhodium::Layers
+namespace Rhodium::Core
 {
 
 	LayerStack::~LayerStack()

@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace Rhodium::Layers
+namespace Rhodium::Core
 {
 	class LayerStack
 	{
