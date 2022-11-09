@@ -10,6 +10,7 @@ extern Rhodium::Core::Application* CreateApplication();
 int main()
 {
 	auto app = Rhodium::Core::CreateApplication();
+	app->Run();
 	delete app;
 }
 #endif

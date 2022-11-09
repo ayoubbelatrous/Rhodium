@@ -1,6 +1,8 @@
 #pragma once
 #include "Layer/Layer.h"
 
+#include <vector>
+
 namespace Rhodium::Layers
 {
 	class LayerStack
