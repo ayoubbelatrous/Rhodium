@@ -1,18 +1,19 @@
 #include "Application/Core/Application.h"
 #include "Application/Core/Entry.h"
+#include "RuntimeLayer.h"
 
 namespace Rhodium::Core
 {
-	class Runtime : public Application
+	class RuntimeApplication : public Application
 	{
 	public:
 
-		Runtime(Core::Data::ApplicationSpecification spec)
+		RuntimeApplication(Core::Data::ApplicationSpecification spec)
 			:Application(spec)
 		{
 		}
 
-		~Runtime()
+		~RuntimeApplication()
 		{
 		}
 	};
@@ -25,6 +26,8 @@ namespace Rhodium
 	Core::Application* Core::CreateApplication()
 	{
 		spec = { "Runtime App" };
-		return new Runtime(spec);
+		RuntimeApplication* App = new RuntimeApplication(spec);
+		App->PushLayer(new RuntimeLayer());
+		return App;
 	}
 }
