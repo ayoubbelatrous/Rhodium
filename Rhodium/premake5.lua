@@ -27,6 +27,7 @@ project "Rhodium"
     links
 	{
 		"GLFW",
+        "GLAD",
 	}
 
     filter "system:windows"

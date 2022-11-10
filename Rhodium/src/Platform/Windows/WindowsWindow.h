@@ -2,6 +2,7 @@
 #include "Window/Core/Window.h"
 #include "GLFW/glfw3.h"
 #include "Events/Event.h"
+#include "Rendering/GraphicsContext.h"
 
 namespace Rhodium::Platform
 {
@@ -42,5 +43,7 @@ namespace Rhodium::Platform
 
 		WindowData m_Data;
 		GLFWwindow* m_GLFWWindowPtr;
+
+		Scope<Core::GraphicsContext> m_Context;
 	};
 }

@@ -38,6 +38,9 @@ namespace Rhodium::Platform
 		Core::WindowCloseEvent event;
 		data.EventCallback(event);
 			});
+
+		m_Context = Core::GraphicsContext::Create();
+		m_Context->Init();
 	}
 
 	void WindowsWindow::OnUpdate()

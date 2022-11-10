@@ -11,6 +11,7 @@
 
 #include "Events/Event.h"
 #include "Events/ApplicationEvents.h"
+#include <Rendering/RenderingApi.h>
 
 namespace Rhodium::Core
 {
@@ -33,14 +34,20 @@ namespace Rhodium::Core
 
 		inline Window& GetWindow() { return *m_Window; }
 
+		inline RenderingApi& GetRenderingApi() { return *m_RenderingApi; }
+
 	private:
+
 		Data::ApplicationSpecification m_Specification;
 		LayerStack m_LayerStack;
 		Scope<Window> m_Window;
+
+		Scope<RenderingApi> m_RenderingApi;
+
 		bool m_Minimized = false;
 		bool m_Running = true;
-
 		static Application* s_Instance;
+
 	public:
 		static Application* Get() { return s_Instance; }
 	};

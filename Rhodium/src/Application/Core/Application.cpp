@@ -22,6 +22,8 @@ namespace Rhodium::Core
 		m_Window = Window::Create(windowSpecification);
 
 		m_Window->SetEventCallback(RH_BIND_EVENT_FN(Application::OnEvent));
+
+		m_RenderingApi = RenderingApi::Create();
 	}
 
 	Application::~Application()
