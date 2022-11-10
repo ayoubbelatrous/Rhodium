@@ -57,4 +57,15 @@ namespace Rhodium::Platform
 		m_Data.EventCallback = eventCallback;
 	}
 
+	bool WindowsWindow::GetKey(const Core::KeyCode keyCode)
+	{
+		auto state = glfwGetKey(m_GLFWWindowPtr, static_cast<int32_t>(keyCode));
+		return state == GLFW_PRESS;
+	}
+
+	bool WindowsWindow::GetMouseButton(uint16_t i)
+	{
+		return glfwGetMouseButton(m_GLFWWindowPtr, i) == GLFW_PRESS;
+	}
+
 }

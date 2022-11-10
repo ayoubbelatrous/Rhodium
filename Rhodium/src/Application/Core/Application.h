@@ -12,7 +12,6 @@
 #include "Events/Event.h"
 #include "Events/ApplicationEvents.h"
 
-
 namespace Rhodium::Core
 {
 	class Application
@@ -31,13 +30,19 @@ namespace Rhodium::Core
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+
+		inline Window& GetWindow() { return *m_Window; }
+
 	private:
 		Data::ApplicationSpecification m_Specification;
 		LayerStack m_LayerStack;
 		Scope<Window> m_Window;
-		Application* m_Instance;
 		bool m_Minimized = false;
 		bool m_Running = true;
+
+		static Application* s_Instance;
+	public:
+		static Application* Get() { return s_Instance; }
 	};
 
 	Application* CreateApplication();

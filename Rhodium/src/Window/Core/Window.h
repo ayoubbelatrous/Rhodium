@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Events/Event.h"
+#include "Input/KeyCodes.h"
 
 namespace Rhodium::Core
 {
@@ -37,6 +38,9 @@ namespace Rhodium::Core
 		virtual void SetEventCallback(const EventCallbackFn& eventCallback) = 0;
 
 		static Scope<Window> Create(WindowSpecification& spec);
+
+		virtual bool GetKey(const KeyCode keyCode) = 0;
+		virtual bool GetMouseButton(uint16_t i) = 0;
 
 	private:
 	};

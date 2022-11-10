@@ -22,6 +22,10 @@ namespace Rhodium::Platform
 
 		void SetEventCallback(const EventCallbackFn& eventCallback) override;
 
+
+		bool GetKey(Core::KeyCode keyCode) override;
+		bool GetMouseButton(uint16_t i) override;
+
 	private:
 
 		struct WindowData

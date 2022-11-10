@@ -1,11 +1,19 @@
 #include "rpch.h"
 #include "Application/Core/Application.h"
+#include "Input/Input.h"
 
 namespace Rhodium::Core
 {
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application(Data::ApplicationSpecification spec)
 		:m_Specification(spec)
 	{
+		if (s_Instance == nullptr)
+		{
+			s_Instance = this;
+		}
+
 		WindowSpecification windowSpecification =
 		{
 			{m_Specification.ApplicationName,720,1280},
@@ -24,12 +32,18 @@ namespace Rhodium::Core
 	{
 		while (m_Running)
 		{
+			if (Input::GetKey(Key::Space))
+			{
+				std::cout << "pressed space key\n";
+			}
 			if (!m_Minimized)
 			{
 				for (Layer* layer : m_LayerStack)
 				{
+
 					layer->OnUpdate();
 					layer->OnRender();
+					
 				}
 			}
 
