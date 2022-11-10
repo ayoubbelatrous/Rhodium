@@ -14,7 +14,8 @@ project "Rhodium"
     {
         "src",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLM}"
+        "%{IncludeDir.GLM}",
+        "%{IncludeDir.GLAD}"
     }
     
     files
