@@ -35,7 +35,7 @@ namespace Rhodium::Core
 		Data::ApplicationSpecification m_Specification;
 		LayerStack m_LayerStack;
 		Scope<Window> m_Window;
-
+		Application* m_Instance;
 		bool m_Minimized = false;
 		bool m_Running = true;
 	};
