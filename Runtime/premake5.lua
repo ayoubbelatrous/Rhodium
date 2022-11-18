@@ -16,7 +16,8 @@ project "Runtime"
 	includedirs
 	{
 		"%{wks.location}/Rhodium/src",
-		"%{IncludeDir.GLM}"
+		"%{IncludeDir.GLM}",
+		"%{IncludeDir.ENTT}"
 	}
 
 	links

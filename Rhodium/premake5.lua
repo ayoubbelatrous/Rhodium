@@ -16,7 +16,8 @@ project "Rhodium"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLM}",
         "%{IncludeDir.GLAD}",
-        "%{IncludeDir.IMGUI}"
+        "%{IncludeDir.IMGUI}",
+        "%{IncludeDir.ENTT}"
     }
     
     files
