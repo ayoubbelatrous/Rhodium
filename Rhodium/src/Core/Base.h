@@ -4,7 +4,7 @@
 #define BIT(x) (1 << x)
 #define RH_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
 
-namespace Rhodium
+namespace Rhodium::Core
 {
 	template<typename T>
 	using Scope = std::unique_ptr<T>;

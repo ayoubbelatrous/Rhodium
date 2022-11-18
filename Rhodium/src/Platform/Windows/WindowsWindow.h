@@ -47,6 +47,6 @@ namespace Rhodium::Platform
 		WindowData m_Data;
 		GLFWwindow* m_GLFWWindowPtr;
 
-		Scope<Core::GraphicsContext> m_Context;
+		Core::Scope<Core::GraphicsContext> m_Context;
 	};
 }

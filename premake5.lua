@@ -24,6 +24,7 @@ IncludeDir["GLFW"] = "%{wks.location}/Rhodium/vendor/GLFW/include"
 IncludeDir["GLAD"] = "%{wks.location}/Rhodium/vendor/glad/include"
 IncludeDir["GLM"] = "%{wks.location}/Rhodium/vendor/glm"
 IncludeDir["IMGUI"] = "%{wks.location}/Rhodium/vendor/imgui"
+IncludeDir["ENTT"] = "%{wks.location}/Rhodium/vendor/entt/include"
 
 group "Dependencies"
 	include "Rhodium/vendor/glfw"

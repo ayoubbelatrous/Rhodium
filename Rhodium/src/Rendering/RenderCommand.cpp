@@ -24,6 +24,5 @@ namespace Rhodium::Core
 		s_RendererAPI->SetViewPortSize(x,y,w,h);
 	}
 
-	Rhodium::Scope<Rhodium::Core::RenderingApi> RenderCommand::s_RendererAPI;
-
+	Scope<RenderingApi> RenderCommand::s_RendererAPI;
 }
