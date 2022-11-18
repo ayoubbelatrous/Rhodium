@@ -42,6 +42,9 @@ namespace Rhodium::Core
 		virtual bool GetKey(const KeyCode keyCode) = 0;
 		virtual bool GetMouseButton(uint16_t i) = 0;
 
+		virtual int GetWidth() = 0;
+		virtual int GetHeight() = 0;
+
 	private:
 	};
 }

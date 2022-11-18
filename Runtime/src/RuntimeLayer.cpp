@@ -1,6 +1,5 @@
 #include "RuntimeLayer.h"
 #include "glm/glm.hpp"
-
 namespace Rhodium::Core
 {
 	void RuntimeLayer::OnInit()
@@ -9,6 +8,7 @@ namespace Rhodium::Core
 
 	void RuntimeLayer::OnUpdate()
 	{
+		std::cout << "test!";
 	}
 
 	void RuntimeLayer::OnEvent(Core::Event& e)
@@ -20,6 +20,10 @@ namespace Rhodium::Core
 	}
 
 	void RuntimeLayer::OnShutdown()
+	{
+	}
+
+	void RuntimeLayer::OnGUIRender()
 	{
 	}
 

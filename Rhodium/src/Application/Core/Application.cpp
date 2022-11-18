@@ -24,6 +24,15 @@ namespace Rhodium::Core
 		m_Window->SetEventCallback(RH_BIND_EVENT_FN(Application::OnEvent));
 
 		m_RenderingApi = RenderingApi::Create();
+
+		m_GuiLayer = new Gui::GuiLayer;
+
+		m_LayerStack.PushOverlay(m_GuiLayer);
+
+		for (Layer* layer : m_LayerStack)
+		{
+			layer->OnInit();
+		}
 	}
 
 	Application::~Application()
@@ -34,22 +43,28 @@ namespace Rhodium::Core
 	{
 		while (m_Running)
 		{
-			if (Input::GetKey(Key::Space))
-			{
-				std::cout << "pressed space key\n";
-			}
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
 				{
+					for (Layer* layer : m_LayerStack)
+					{
 
-					layer->OnUpdate();
-					layer->OnRender();
+						layer->OnUpdate();
+						layer->OnRender();
+					}
+				}
+				
+				{
 					
+					m_GuiLayer->OnGuiLayerBegin();
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnGUIRender();
+					}
+					m_GuiLayer->OnGuiLayerEnd();
 				}
 			}
-
-			m_Window->OnUpdate();
+			 m_Window->OnUpdate();
 		}
 	}
 
@@ -76,11 +91,14 @@ namespace Rhodium::Core
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;
 			return false;
 		}
+
+		m_RenderingApi->SetViewPortSize(0, 0, e.GetWidth(), e.GetHeight());
 
 		m_Minimized = false;
 		return false;
@@ -94,6 +112,10 @@ namespace Rhodium::Core
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+	}
+
+	void Application::Shutdown()
+	{
 	}
 
 }

@@ -8,5 +8,6 @@ namespace Rhodium::Platform
 	{
 	public:
 		void Init() override;
+		void SetViewPortSize(int x, int y, int w, int h) override;
 	};
 }

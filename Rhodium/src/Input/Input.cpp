@@ -6,11 +6,11 @@ namespace Rhodium::Core
 {
 	bool Input::GetKey(const KeyCode keyCode)
 	{
-		return Application::Get()->GetWindow().GetKey(keyCode);
+		return Application::Get().GetWindow().GetKey(keyCode);
 	}
 
 	bool Input::GetMouseKey(uint16_t index)
 	{
-		return Application::Get()->GetWindow().GetMouseButton(index);
+		return Application::Get().GetWindow().GetMouseButton(index);
 	}
 }

@@ -15,7 +15,8 @@ project "Rhodium"
         "src",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLM}",
-        "%{IncludeDir.GLAD}"
+        "%{IncludeDir.GLAD}",
+        "%{IncludeDir.IMGUI}"
     }
     
     files
@@ -28,6 +29,7 @@ project "Rhodium"
 	{
 		"GLFW",
         "GLAD",
+        "IMGUI",
 	}
 
     filter "system:windows"

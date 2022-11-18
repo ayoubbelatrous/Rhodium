@@ -21,5 +21,8 @@ namespace Rhodium::Core
 
 		void OnShutdown() override;
 
+
+		void OnGUIRender() override;
+
 	};
 }

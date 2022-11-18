@@ -11,6 +11,7 @@ namespace Rhodium::Core
 		virtual void OnUpdate() = 0;
 		virtual void OnEvent(Core::Event& e) = 0;
 		virtual void OnRender() = 0;
+		virtual void OnGUIRender() = 0;
 		virtual void OnShutdown() = 0;
 	};
 }

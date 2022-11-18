@@ -23,10 +23,12 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "%{wks.location}/Rhodium/vendor/GLFW/include"
 IncludeDir["GLAD"] = "%{wks.location}/Rhodium/vendor/glad/include"
 IncludeDir["GLM"] = "%{wks.location}/Rhodium/vendor/glm"
+IncludeDir["IMGUI"] = "%{wks.location}/Rhodium/vendor/imgui"
 
 group "Dependencies"
 	include "Rhodium/vendor/glfw"
     include "Rhodium/vendor/glad"
+    include "Rhodium/vendor/imgui"
 group ""
 
 

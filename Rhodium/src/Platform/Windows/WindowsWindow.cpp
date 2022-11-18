@@ -15,10 +15,16 @@ namespace Rhodium::Platform
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
 
+
+
 		m_GLFWWindowPtr = glfwCreateWindow(m_Specification.WindowProps.Width, m_Specification.WindowProps.Height
 			, m_Specification.WindowProps.WindowName.c_str(), nullptr, nullptr);
 
 		glfwMakeContextCurrent(m_GLFWWindowPtr);
+
+
+		m_Context = Core::GraphicsContext::Create();
+		m_Context->Init();
 
 		glfwSetWindowUserPointer(m_GLFWWindowPtr, &m_Data);
 
@@ -38,9 +44,6 @@ namespace Rhodium::Platform
 		Core::WindowCloseEvent event;
 		data.EventCallback(event);
 			});
-
-		m_Context = Core::GraphicsContext::Create();
-		m_Context->Init();
 	}
 
 	void WindowsWindow::OnUpdate()
@@ -69,6 +72,17 @@ namespace Rhodium::Platform
 	bool WindowsWindow::GetMouseButton(uint16_t i)
 	{
 		return glfwGetMouseButton(m_GLFWWindowPtr, i) == GLFW_PRESS;
+	}
+
+	int WindowsWindow::GetWidth()
+	{
+
+		return m_Data.Width;
+	}
+
+	int WindowsWindow::GetHeight()
+	{
+		return m_Data.Height;
 	}
 
 }

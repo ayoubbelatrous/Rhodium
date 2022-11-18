@@ -11,7 +11,9 @@
 
 #include "Events/Event.h"
 #include "Events/ApplicationEvents.h"
-#include <Rendering/RenderingApi.h>
+
+#include "Rendering/RenderingApi.h"
+#include "Gui/GuiLayer.h"
 
 namespace Rhodium::Core
 {
@@ -31,6 +33,7 @@ namespace Rhodium::Core
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+		void Shutdown();
 
 		inline Window& GetWindow() { return *m_Window; }
 
@@ -44,12 +47,14 @@ namespace Rhodium::Core
 
 		Scope<RenderingApi> m_RenderingApi;
 
+		Gui::GuiLayer* m_GuiLayer;
+
 		bool m_Minimized = false;
 		bool m_Running = true;
 		static Application* s_Instance;
 
 	public:
-		static Application* Get() { return s_Instance; }
+		static Application& Get() { return *s_Instance; }
 	};
 
 	Application* CreateApplication();

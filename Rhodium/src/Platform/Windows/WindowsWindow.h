@@ -14,7 +14,7 @@ namespace Rhodium::Platform
 
 		void* GetNativeWindow() const override
 		{
-			return nullptr;
+			return m_GLFWWindowPtr;
 		}
 
 		void OnUpdate() override;
@@ -26,6 +26,9 @@ namespace Rhodium::Platform
 
 		bool GetKey(Core::KeyCode keyCode) override;
 		bool GetMouseButton(uint16_t i) override;
+
+		int GetWidth() override;
+		int GetHeight() override;
 
 	private:
 
