@@ -8,6 +8,11 @@ namespace Rhodium::Platform
 	{
 	public:
 		void Init() override;
-		void SetViewPortSize(int x, int y, int w, int h) override;
+
+		void SetViewPortSize(uint32_t x, uint32_t y, uint32_t w, uint32_t h) override;
+
+		void Clear() override;
+
+		void SetClearColor(const glm::vec4& color) override;
 	};
 }

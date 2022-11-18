@@ -79,8 +79,6 @@ namespace Rhodium::Gui
 
 	void GuiLayer::OnGuiLayerEnd()
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
-
 		ImGuiIO& io = ImGui::GetIO();
 		Core::Application& app = Core::Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());
@@ -99,7 +97,6 @@ namespace Rhodium::Gui
 
 	void GuiLayer::OnGUIRender()
 	{
-		ImGui::ShowDemoWindow();
 	}
 
 }

@@ -2,6 +2,8 @@
 #include "Application/Core/Application.h"
 #include "Input/Input.h"
 
+#include "Rendering/Renderer.h"
+
 namespace Rhodium::Core
 {
 	Application* Application::s_Instance = nullptr;
@@ -23,7 +25,7 @@ namespace Rhodium::Core
 
 		m_Window->SetEventCallback(RH_BIND_EVENT_FN(Application::OnEvent));
 
-		m_RenderingApi = RenderingApi::Create();
+		Renderer::Init();
 
 		m_GuiLayer = new Gui::GuiLayer;
 
@@ -98,7 +100,7 @@ namespace Rhodium::Core
 			return false;
 		}
 
-		m_RenderingApi->SetViewPortSize(0, 0, e.GetWidth(), e.GetHeight());
+		Renderer::OnWindowResize(glm::vec2(e.GetWidth(), e.GetHeight()));
 
 		m_Minimized = false;
 		return false;

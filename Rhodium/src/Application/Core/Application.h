@@ -37,15 +37,11 @@ namespace Rhodium::Core
 
 		inline Window& GetWindow() { return *m_Window; }
 
-		inline RenderingApi& GetRenderingApi() { return *m_RenderingApi; }
-
 	private:
 
 		Data::ApplicationSpecification m_Specification;
 		LayerStack m_LayerStack;
 		Scope<Window> m_Window;
-
-		Scope<RenderingApi> m_RenderingApi;
 
 		Gui::GuiLayer* m_GuiLayer;
 
