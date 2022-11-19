@@ -13,6 +13,7 @@ project "Rhodium"
     includedirs
     {
         "src",
+        "vendor",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.GLM}",
         "%{IncludeDir.GLAD}",
@@ -23,7 +24,10 @@ project "Rhodium"
     files
     {
         "src/**.h",
-		"src/**.cpp"
+		"src/**.cpp",
+
+        "vendor/stb_image/**.h",
+        "vendor/stb_image/**.cpp",
     }
 
     links
